@@ -2,7 +2,7 @@ import string
 import re
 
 # keep lines which contain one of keywords in filter-ins
-filter_ins = []
+filter_ins = ["dev-ioamp-router"]
 
 filter_outs = ["usbPowerMonitorOM5|_iomodule_create|vdev-medialaunch|pid \d+:"]
 
