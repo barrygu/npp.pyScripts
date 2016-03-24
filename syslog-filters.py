@@ -33,14 +33,18 @@ results = []
 
 col_delimiter = re.compile(" +")
 def Column_Filter(line):
+    min_cols = 6
+    pos_maj = 4
+    pos_min = 5
+
     cols = col_delimiter.split(line)
 
-    if len(cols) < 6:
+    if len(cols) < min_cols:
         return 0
 
     try:
-        major = int(cols[4], 10)
-        minor = int(cols[5], 10)
+        major = int(cols[pos_maj], 10)
+        minor = int(cols[pos_min], 10)
     except ValueError as e:
         #console.write(str.format("Error: {}\n", e))
         #console.write(str.format(">> {}\n", line))
