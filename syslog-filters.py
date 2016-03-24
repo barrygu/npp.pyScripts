@@ -4,7 +4,7 @@ import re
 # keep lines which contain one of keywords in filter-ins
 filter_ins = ["dev-ioamp-router"]
 
-filter_outs = ["usbPowerMonitorOM5|_iomodule_create|vdev-medialaunch|pid \d+:"]
+filter_outs = ["usbPowerMonitorOM5|_iomodule_create|vdev-medialaunch|pid \d+:|NmeString|capture:"]
 
 # ["io-media-(generic|cinemo)|dev-(navsens|i2c|spi|omappowermgmt|videocapture|((display-)?|dsp)ipc)",
 #               " (mmr|libmldr|pid [0-9]+( t)?|mdp|mme|gnc|EventLog|mdi|io-ipc|(mm)?sync|plst):", 
