@@ -51,7 +51,7 @@ def Column_Filter(line):
 
     if major <= 10000 or (major >= 20000 and major <= 20011):
         return 1 # will be filter-out
-### end Contents_Filter
+### end Column_Filter
 
 def Contents_Filter(contents, lineNumber, totalLines):
     #global handled_lines
