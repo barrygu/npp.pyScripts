@@ -33,9 +33,26 @@ results = []
 
 col_delimiter = re.compile(" +")
 def Column_Filter(line):
+    pos = 19
+    min_len = pos + 1
     min_cols = 6
     pos_maj = 4
     pos_min = 5
+
+    if len(line) < min_len:
+        return 0
+
+    ###
+    # There're 2 line formats
+    # 1>> Jan 01 00:00:00.974.1 00008 00 asrc_in_init: INFO-Event: ASRC-Id:53  BufferSize:4096
+    #                        ^ only the 19th character is different between 2 formats
+    # 2>> Jan 01 09:00:00.941    1     8     0 asrc_in_init: INFO-Event: ASRC-Id:53  BufferSize:4096
+    ###
+
+    # replace the 19th character '.' with ' '
+    if line[pos] == '.':
+        new_line = line[:pos] + ' ' + line[pos + 1:]
+        line = new_line
 
     cols = col_delimiter.split(line)
 
